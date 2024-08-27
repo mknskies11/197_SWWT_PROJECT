@@ -57,7 +57,7 @@
 
   <!--Registration form starts here-->
   <div class="form-container">
-    <form action="process.php" method="post">
+    <form action="sendmail.php" method="post">
       <h3>contact us</h3>
 
       <input type="text" name="cname" required placeholder="Enter your name">
