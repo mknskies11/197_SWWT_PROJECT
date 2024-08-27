@@ -27,7 +27,7 @@ if(!isset($_SESSION['user_name'])){
             <h1>Welcome!</h1>
             <p>Welcome or welcome back!</p>
             <a href="#" class="admin-btn">Start Browsing</a>
-            <a href="#" class="admin-btn">Logout</a>
+            <a href="logout.php" class="admin-btn">Logout</a>
 
         </div>
     </div>
