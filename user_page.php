@@ -1,5 +1,17 @@
+<?php
 
+@include 'config.php';
+
+session_start();
+
+if(!isset($_SESSION['user_name'])){
+    header('location:login_form.php');
+}
+
+
+?>
  
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +23,7 @@
 <body>
 <div class="admin-container">
         <div class="admin-content">
-            <h3>Hey there,</h3>
+            <h3>Hey there, <span><?php echo $_SESSION['user_name']?> </span></h3>
             <h1>Welcome!</h1>
             <p>Welcome or welcome back!</p>
             <a href="#" class="admin-btn">Start Browsing</a>
