@@ -1,0 +1,251 @@
+body{
+    background: #000000;
+    align-items: center;
+}
+
+/*About Us card Header section*/
+.aboutus-header{
+    position: relative;
+    width: 100%;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    background: url(Images/aboutusnew.png);
+    background-size: cover;
+    object-position: center;
+    width: 100%;
+}
+.aboutus-header img{
+    width: 100%;
+}
+.aboutusheader-text{
+    text-align: center;
+    margin-top: 500px;
+}
+.aboutus-header .aboutusheader-text{
+    z-index: 888;
+    color: #ffffff;
+    width: 70%;
+
+}
+.aboutus-header .aboutusheader-text h3{
+    font-size:20px;
+    font-family: Poppins;
+}
+.aboutus-header .aboutusheader-text h1{
+    font-size:80px;
+    font-weight: 900;
+    font-family: Dream Avenue;
+    margin-bottom: 2px;
+}
+/*About Us Small Card Set CSS*/
+.aboutus-wrapper{
+    padding: 10px 10%;
+    color: #ffffff;
+}
+.aboutusbox-area{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 10px;
+    margin-top: 2px;
+    
+}
+.about-box{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+}
+.about-box img{
+    width: 100%;
+    border-radius: 10px;
+    display: flex; 
+}
+.about-box img:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.aboutus-para p{
+    font-family: Poppins;
+    text-align: center;
+    color: #ffffff;
+    font-family: Poppins;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+/*HQ About Us Wrapper Area*/
+.hqwrapper{
+    margin: 150px auto;
+    width: 70%;
+}
+
+.hqmain-img{
+    max-width: 320px;
+    border-radius: 10px;
+    float: left;
+    border-radius: 10px;
+    margin-right: 15px;
+    justify-content: center;
+}
+.hqtext-box{
+    color: #ffffff;
+    font-family: Poppins;
+}
+.hqtext-box h2{
+    font-size: 30px;
+}
+.hqtext-box h5{
+    font-size: 25px;
+}
+.hqtext-box p{
+    font-size: 15px;
+}
+.hqwrapper a{
+    background: #ffffff;
+    color: #1c1c1c;
+    padding: 15px 35px;
+    font-family: Poppins;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 40px;
+    font-size: 13px;
+}
+.hqwrapper a:hover{
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    background: transparent;
+}
+/*HQ GALLERY CSS*/
+.img-area{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.single-img{
+    padding: 0 10px 10px 0;
+}
+.single-img img:hover{
+    opacity: 0.5;
+    transition: 0.8s;
+}
+.gallery-viewmore{
+    color: #ffffff;
+    font-family: Poppins;
+    text-decoration: none;
+    align-items: right;
+    text-align: right;
+    font-size: 14px;
+}
+.gallery-viewmore p{
+    margin-right: 45px;
+}
+.gallery-viewmore p:hover{
+    color: darkgray;
+    transition: 0.5s;
+    font-style: italic;
+}
+/*Monochrome CEO AND FOUNDER BANNER*/
+.ceoheader{
+    margin-top: 150px;
+    color: #ffffff;
+    font-family: Poppins;
+    font-size: 30px;
+    text-align: center;
+}
+.ceobanner{
+    position: relative;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: url(Images/ceobanner.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.ceobanner img{
+    width: 100%;
+    height: 100px;
+}
+.ceobanner-description{
+    font-family: Poppins;
+    text-align: center;
+    color: #ffffff;
+    font-family: Poppins;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+
+/*OUR TEAM CSS*/
+.team{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.team-text h2{
+    color: #ffffff;
+    font-family: Poppins;
+    margin-bottom: 10px;
+}
+.team-content{
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+.team-content img{
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.team-box{
+    padding: 16px;
+    background: #1c1c1c;
+    border-radius: 15px;
+    transition: all 0.38s ease;
+}
+.team-box h3{
+    font-size: 23px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+.team-icons i{
+    display: inline-block;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 8px;
+    transition: all 0.38s ease;
+}
+.team-icons i:hover{
+    transform: scale(1.2);
+}
+.team-box:hover{
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+@media(max-width: 1240px){
+    .team{
+        width: 100%;
+        height: auto;
+        padding: 90 px 2%;
+    }
+}
