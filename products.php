@@ -17,7 +17,7 @@
   <!--Bootstrap Navbar starts here-->
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand me-auto" href="#"><img src="Images/logo.png" width="50%"></a>
+      <a class="navbar-brand me-auto" href="home.php"><img src="Images/logo.png" width="50%"></a>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="Images/logo.png" width="70%"></h5>
@@ -26,19 +26,19 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link mx-lg-2" aria-current="page" href="Home.html">Home</a>
+              <a class="nav-link mx-lg-2" aria-current="page" href="home.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-lg-2" href="collection.html">Collections</a>
+              <a class="nav-link mx-lg-2" href="collection.php">Collections</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active mx-lg-2" href="products.html">Products</a>
+              <a class="nav-link active mx-lg-2" href="products.php">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-lg-2" href="contactus.html">Contact Us</a>
+              <a class="nav-link mx-lg-2" href="contactus.php">Contact Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-lg-2" href="aboutus.html">About Us</a>
+              <a class="nav-link mx-lg-2" href="aboutus.php">About Us</a>
             </li>
           </ul>
         </div>

@@ -29,19 +29,19 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="Home.html">Home</a>
+                <a class="nav-link mx-lg-2" href="home.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="collection.html">Collections</a>
+                <a class="nav-link mx-lg-2" href="collection.php">Collections</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="products.html">Products</a>
+                <a class="nav-link mx-lg-2" href="products.php">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="contactus.html">Contact Us</a>
+                <a class="nav-link mx-lg-2" href="contactus.php">Contact Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="aboutus.html">About Us</a>
+                <a class="nav-link mx-lg-2" href="aboutus.php">About Us</a>
               </li>
             </ul>
           </div>
