@@ -1,16 +1,17 @@
 <?php
 include('../config.php');
 
+if(isset($_POST['']))
 
 ?>
+
 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Add Products</title>
+    <title>Admin Dashboard - Add Categories</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -34,10 +35,10 @@ include('../config.php');
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
           <li class="nav-item">
-              <a class="nav-link mx-lg-2" aria-current="page" href="add_category.php">Add Categories</a>
+              <a class="nav-link active mx-lg-2" aria-current="page" href="add_category.php">Add Categories</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active mx-lg-2" aria-current="page" href="add_products.php">Add Products</a>
+              <a class="nav-link mx-lg-2" aria-current="page" href="add_products.php">Add Products</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mx-lg-2" href="collection.php">View Products</a>
@@ -67,24 +68,17 @@ include('../config.php');
   <!--Bootstrap Navbar ends here-->
 
 
-    <!--Add products form starts here-->
-    <div class="form-container">
+     <!--Add Categories form starts here-->
+     <div class="form-container">
     <form action="" method="post" enctype="multipart/form-data">
-    <h3>Add Products</h3>
+    <h3>Add Categories</h3>
 
     <!--Product Title-->
     <div class="form-outline mb-4 w-50 m-auto">
-      <label for="product_title" class="form-label">Product Title</label>
-      <input type="text" name="product-title" id="product-title" class="form-control" placeholder="Enter Product Title" autocomplete="off" required="required">
+      <label for="product_title" class="form-label">Category Title</label>
+      <input type="text" name="product-title" id="product-title" class="form-control" placeholder="Enter Category" autocomplete="off" required="required">
     </div>
-
-    <!--Product Title-->
-    <div class="form-outline mb-4 w-50 m-auto">
-      <label for="product_title" class="form-label">Product Description</label>
-      <input type="text" name="product-title" id="product-title" class="form-control" placeholder="Enter Product Description" autocomplete="off" required="required">
-    </div>
-
-
+    <input type="submit" name="submit" value="Add" class="form-btn" style="width: 50%;">
 
     </form>
   </div>
@@ -142,8 +136,5 @@ include('../config.php');
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-
-<body>
-    
 </body>
 </html>
