@@ -5,12 +5,19 @@ if(isset($_POST['admin-submit'])){
   $categoryTitle = $_POST['category_title'];
 
   //select data from database
-  $select_query = "SELECT * FROM `categories` WHERE category_title"
-  $insert_query = "INSERT INTO `categories` (`category_title`) VALUES ('$categoryTitle')";
-  $result = mysqli_query($conn, $insert_query);
+  $select_query = "SELECT * FROM `categories` WHERE category_title = '$categoryTitle'";
+  $result_select = mysqli_query($conn, $select_query);
+  $number = mysqli_num_rows($result_select);
+  if($number > 0){
+    echo "<script>alert('This category is already included! Try adding some other category')</script>";
+  }
+  else{
+    $insert_query = "INSERT INTO `categories` (`category_title`) VALUES ('$categoryTitle')";
+    $result = mysqli_query($conn, $insert_query);
 
-  if($result){
-    echo "<script>alert('Category has been added successfully!')</script>";
+    if($result){
+      echo "<script>alert('Category has been added successfully!')</script>";
+    }
   }
 }
 ?>
