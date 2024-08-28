@@ -34,7 +34,7 @@ include('../config.php');
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
           <li class="nav-item">
-              <a class="nav-link mx-lg-2" aria-current="page" href="admin_index.php?add_category.php">Add Categories</a>
+              <a class="nav-link mx-lg-2" aria-current="page" href="add_category.php">Add Categories</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mx-lg-2" aria-current="page" href="add_products.php">Add Products</a>

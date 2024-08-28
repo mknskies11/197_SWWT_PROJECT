@@ -1,8 +1,15 @@
 <?php
 include('../config.php');
 
-if(isset($_POST['']))
+if(isset($_POST['admin-submit'])){
+  $categoryTitle = $_POST['category_title'];
+  $insert_query = "INSERT INTO `categories` (`category_title`) VALUES ('$categoryTitle')";
+  $result = mysqli_query($conn, $insert_query);
 
+  if($result){
+    echo "<script>alert('Category has been added successfully!')</script>";
+  }
+}
 ?>
 
 
@@ -76,9 +83,9 @@ if(isset($_POST['']))
     <!--Product Title-->
     <div class="form-outline mb-4 w-50 m-auto">
       <label for="product_title" class="form-label">Category Title</label>
-      <input type="text" name="product-title" id="product-title" class="form-control" placeholder="Enter Category" autocomplete="off" required="required">
+      <input type="text" name="category_title" id="product-title" class="form-control" placeholder="Enter Category" autocomplete="off" required="required">
     </div>
-    <input type="submit" name="submit" value="Add" class="form-btn" style="width: 50%;">
+    <input type="submit" name="admin-submit" value="Add" class="form-btn" style="width: 50%;">
 
     </form>
   </div>
