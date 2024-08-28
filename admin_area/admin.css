@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+/*Navbar CSS*/
+.navbar{
+    background-color: #ffffff;
+}
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+
+}
+.nav-link {
+    color: #787976;
+    font-weight: 500;
+    position: relative;
+
+}
+
+.nav-link:hover,
+.nav-link:active {
+    color: #000000;
+}
+
+
+@media (min-width: 991px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #000000;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link:active::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+
+.admin-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 60px;
+}
+
+.admin-container .admin-content{
+    text-align: center;
+}
+
+.admin-container .admin-content h3{
+    font-size: 30px;
+    color: #333;
+}
+
+.admin-container .admin-content span{
+    background: #000000;
+    color: #ffffff;
+    border-radius: 9px;
+    padding: 0 15px;
+
+}
+.admin-container .admin-content p{
+    margin-bottom: 20px;
+}
+
+.admin-container .admin-content .admin-btn{
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.admin-container .admin-content .admin-btn:hover{
+    background-color: #333;
+}
+
+.login-button {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.login-button:hover {
+    background-color: #63666a;
+}
+
+.form-container{
+
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 20px;
+    background-image: url(../Images/adminback.jpg);
+}
+
+.form-container form{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 52%;
+    backdrop-filter: blur(5px);
+    border: #ffffff;
+}
+
+.form-container h3{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    color: #fff;
+}
+.form-container form input,
+.form-container form select{
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 17px;
+    margin: 8px 0;
+    background: #eee;
+    border-radius: 15px;
+}
+
+.form-container form select option{
+    background: #ffffff;
+}
+.form-container form .form-btn{
+    background: #333;
+    color: #ffffff;
+    text-transform: capitalize;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    background: #000000;
+
+}
+.form-container form .form-btn:hover{
+    background: #333;
+    color: #eee;
+}
+
+.form-container form p{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ffffff;
+}
+.form-container form a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-container form .error-msg{
+    margin: 10px 0;
+    display: block;
+    background: crimson;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 15px;
+}
+
+/*------------------------------FOOTER------------------------------*/
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+}
+.footer{
+    background-color: #000000;
+    padding: 70px 0;
+}
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+
+}
+.footer-col h5{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h5::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #63666a;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px ;
+}
+.footer-col ul li a{
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3 s ease;
+
+}
+.footer-col ul li a:hover{
+    color: #ffffff;
+
+}
+.footer-col .social-links a{
+    display: inline-block;
+    margin:0 10px 10px 0;
+    text-align: center;
+    font-size: 17px;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+    color: #63666a;
+}

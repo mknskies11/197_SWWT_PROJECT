@@ -43,6 +43,18 @@
           </ul>
         </div>
       </div>
+
+                <!-- Navbar Icons -->
+          <div class="d-flex align-items-center me-3">
+            <a href="#" class="text-dark me-3"><i class="bx bx-user bx-sm"></i></a>
+            <a href="#" class="text-dark me-3"><i class="bx bx-cart bx-sm"></i></a>
+            <form class="d-flex me-3" role="search">
+            <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-dark btn-sm ms-1" type="submit">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+
       <a href="login_form.php" class="login-button">Login</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
