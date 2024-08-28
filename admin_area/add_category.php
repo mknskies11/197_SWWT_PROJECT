@@ -3,6 +3,9 @@ include('../config.php');
 
 if(isset($_POST['admin-submit'])){
   $categoryTitle = $_POST['category_title'];
+
+  //select data from database
+  $select_query = "SELECT * FROM `categories` WHERE category_title"
   $insert_query = "INSERT INTO `categories` (`category_title`) VALUES ('$categoryTitle')";
   $result = mysqli_query($conn, $insert_query);
 
