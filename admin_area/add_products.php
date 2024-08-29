@@ -4,7 +4,6 @@ include('../config.php');
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,7 +83,31 @@ include('../config.php');
       <input type="text" name="product-title" id="product-title" class="form-control" placeholder="Enter Product Description" autocomplete="off" required="required">
     </div>
 
+    <!--Categories-->
+    <div class="form-outline mb-4 w-50 m-auto">
+      <label for="product_title" class="form-label">Category</label>
+      <select name="product_categories" class="form-select">
+        <option value="">Select Category</option>
+        <option value="">Blazers and Jackets</option>
+        <option value="">C3</option>
+        <option value="">C4</option>
+      </select>
+    </div>
 
+    <!--Image-->
+    <div class="form-outline mb-4 w-50 m-auto">
+      <label for="product_image" class="form-label">Product Image</label>
+      <input type="file" name="product_image" id="product_image" class="form-control" required="required">
+    </div>
+
+    <!--Price-->
+    <div class="form-outline mb-4 w-50 m-auto">
+      <label for="product_price" class="form-label">Product Price</label>
+      <input type="text" name="product_price" id="product_price" class="form-control" placeholder="Enter Price" autocomplete="off" required="required">
+    </div>
+
+    <!--Button-->
+    <input type="submit" name="addProduct_submit" value="Add" class="form-btn" style="width: 50%;">
 
     </form>
   </div>
