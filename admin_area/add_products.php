@@ -1,6 +1,22 @@
 <?php
 include('../config.php');
 
+if(isset($_POST['addProduct_submit'])){
+  $productTitle = $_POST['product_title'];
+  $productDesc = $_POST['product_desc'];
+  $productCategories = $_POST['product_categories'];
+  $productPrice = $_POST['product_price'];
+
+  //accessing images
+  $productImage = $_POST['product_image']['imgName'];
+
+  //accessing image temporary name
+  $productImage = $_POST['product_image']['imgTempName'];
+
+  //checking empty condition
+  if($productTitle == '' or $productDesc == '' or $productCategories == '' or $productPrice == '')
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -73,18 +89,18 @@ include('../config.php');
     <!--Product Title-->
     <div class="form-outline mb-4 w-50 m-auto">
       <label for="product_title" class="form-label">Product Title</label>
-      <input type="text" name="product-title" id="product-title" class="form-control" placeholder="Enter Product Title" autocomplete="off" required="required">
+      <input type="text" name="product_title" id="product-title" class="form-control" placeholder="Enter Product Title" autocomplete="off" required="required">
     </div>
 
     <!--Product Title-->
     <div class="form-outline mb-4 w-50 m-auto">
-      <label for="product_title" class="form-label">Product Description</label>
-      <input type="text" name="product-title" id="product-title" class="form-control" placeholder="Enter Product Description" autocomplete="off" required="required">
+      <label for="product_desc" class="form-label">Product Description</label>
+      <input type="text" name="product_desc" id="product-title" class="form-control" placeholder="Enter Product Description" autocomplete="off" required="required">
     </div>
 
     <!--Categories-->
     <div class="form-outline mb-4 w-50 m-auto">
-      <label for="product_title" class="form-label">Category</label>
+      <label for="product_categories" class="form-label">Category</label>
       <select name="product_categories" class="form-select">
         <option value="">Select Category</option>
         <?php
