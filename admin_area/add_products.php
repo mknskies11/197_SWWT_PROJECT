@@ -11,10 +11,19 @@ if(isset($_POST['addProduct_submit'])){
   $productImage = $_POST['product_image']['imgName'];
 
   //accessing image temporary name
-  $productImage = $_POST['product_image']['imgTempName'];
+  $productTempImage = $_POST['product_image']['imgTempName'];
 
   //checking empty condition
-  if($productTitle == '' or $productDesc == '' or $productCategories == '' or $productPrice == '')
+  if($productTitle == '' or $productDesc == '' or $productCategories == '' or $productPrice == '' or $productImage == ''){
+    echo "<script>alert('Please fill all the fields')</script>";
+    exit();
+  }
+  else{
+    move_uploaded_file($productTempImage, "./product_image/$productImage");
+
+    //insert query
+    $insert_product = "INSERT INTO `products` (product_title, product_description, category_id, product_image, product_price, date, status)"
+  }
 }
 
 ?>
