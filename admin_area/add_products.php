@@ -34,6 +34,7 @@ if(isset($_POST['addProduct_submit'])){
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +55,7 @@ if(isset($_POST['addProduct_submit'])){
 <header>
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand me-auto" href="home.php"><img src="../Images/logo.png" width="50%"></a>
+      <a class="navbar-brand me-auto" href="../home.php"><img src="../Images/logo.png" width="50%"></a>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="../Images/logo.png" width="70%"></h5>
@@ -111,8 +112,9 @@ if(isset($_POST['addProduct_submit'])){
     <div class="form-outline mb-4 w-50 m-auto">
       <label for="product_categories" class="form-label">Category</label>
       <select name="product_categories" class="form-select">
-        <option value="">Select Category</option>
-        <?php
+        <option value="">--Select Category--</option>
+
+        <?php //php code 
             $select_query = "SELECT * FROM `categories` ";
             $result_query = mysqli_query($conn, $select_query);
 

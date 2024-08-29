@@ -1,3 +1,7 @@
+<?php
+
+@include 'config.php';
+?>
 <html>
 
 <head>
@@ -78,14 +82,31 @@
   </div>
   <!--Header video PRODUCTS ends here-->
 
+  <?php
+      //fetching products
+      $select_query = "SELECT * FROM `products` ";
+      $result_query = mysqli_query($conn, $select_query);
+
+      // $row = mysqli_fetch_assoc($result_query);
+      // echo $row['product_title'];
+      while($row = mysqli_fetch_assoc($result_query)){
+        $productID = $row = mysqli_fetch_assoc($result_query)
+      }
+      ?>
+
+
   <!--NEW ARRIVALS begins here-->
   <div class="newarrivals-heading">
     <h2>Latest & Hottest<br><span>NEW ARRIVALS</span></h2>
   </div>
   <div class="newarrivals-container">
+
+
+
+<!--product 1 -->
     <div class="product-box">
       <img src="Images/p1.png">
-        <h5>Straight Cuff Sleeved Organza Shirt</h5>
+        <h5 name="product_title">Straight Cuff Sleeved Organza Shirt</h5>
         <div class="star">
           <i class='bx bxs-star'></i>
           <i class='bx bxs-star'></i>
@@ -96,97 +117,6 @@
         <h6 class="price">$218</h6>
         <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
       </div>
-
-      <div class="product-box">
-        <img src="Images/p2.png">
-          <h5>Straight Collared Neck Mesh Shirt</h5>
-          <div class="star">
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-          </div>
-          <h6 class="price">$218</h6>
-          <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
-        </div>
-
-        <div class="product-box">
-          <img src="Images/p3.png">
-            <h5>Black Chiffon Top</h5>
-            <div class="star">
-              <i class='bx bxs-star'></i>
-              <i class='bx bxs-star'></i>
-              <i class='bx bxs-star'></i>
-              <i class='bx bxs-star'></i>
-              <i class='bx bxs-star'></i>
-            </div>
-            <h6 class="price">$600</h6>
-            <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
-          </div>
-
-          <div class="product-box">
-            <img src="Images/p4.png">
-              <h5>Peplum Sleeveless Silk Chiffon Top</h5>
-              <div class="star">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-              </div>
-              <h6 class="price">$600</h6>
-              <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
-            </div>
-
-            <div class="product-box">
-              <img src="Images/p5.png">
-                <h5>Peplum Sleeveless Silk Chiffon Top</h5>
-                <div class="star">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                </div>
-                <h6 class="price">$570</h6>
-                <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
-              </div>
-
-              <div class="product-box">
-                <img src="Images/p6.png">
-                  <h5>Peplum Sleeveless Silk Chiffon Top</h5>
-                  <div class="star">
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                  </div>
-                  <h6 class="price">$600</h6>
-                  <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
-                </div>
-
-                <div class="product-box">
-                  <img src="Images/p7.png">
-                    <h5>Peplum Sleeveless Silk Chiffon Top</h5>
-                    <div class="star">
-                      <i class='bx bxs-star'></i>
-                      <i class='bx bxs-star'></i>
-                      <i class='bx bxs-star'></i>
-                      <i class='bx bxs-star'></i>
-                      <i class='bx bxs-star'></i>
-                    </div>
-                    <h6 class="price">$410</h6>
-                    <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
-                  </div>
-    </div>
-  </div>
-<!--NEW ARRIVALS end here-->
-
-
-
-
 
   <!--Footer-->
   <footer class="footer">
