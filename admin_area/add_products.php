@@ -1,7 +1,6 @@
 <?php
 include('../config.php');
 
-
 ?>
 
 <!DOCTYPE html>
@@ -88,9 +87,20 @@ include('../config.php');
       <label for="product_title" class="form-label">Category</label>
       <select name="product_categories" class="form-select">
         <option value="">Select Category</option>
-        <option value="">Blazers and Jackets</option>
+        <?php
+            $select_query = "SELECT * FROM `categories` ";
+            $result_query = mysqli_query($conn, $select_query);
+
+            while($row = mysqli_fetch_assoc($result_query)){
+              $categoryTitle = $row['category_title'];
+              $category_id = $row['category_id'];
+              echo "<option value='$category_id'>$categoryTitle</option>";
+            }
+        
+        ?>
+        <!-- <option value="">Blazers and Jackets</option>
         <option value="">C3</option>
-        <option value="">C4</option>
+        <option value="">C4</option> -->
       </select>
     </div>
 

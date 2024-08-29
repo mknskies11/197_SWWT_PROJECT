@@ -9,6 +9,11 @@
     border: none;
     text-decoration: none;
 }
+body{
+    margin: 0;
+    height: 100%;
+    padding-top: 160px;
+}
 /*Navbar CSS*/
 .navbar{
     background-color: #ffffff;
@@ -111,13 +116,16 @@
 
 
 .form-container{
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
+    padding-top: 1000;
     background-image: url(../Images/adminback.jpg);
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background from repeating */
 }
 
 .form-container form{
