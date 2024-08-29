@@ -92,13 +92,6 @@
     <div class="product-box">
       <img src="Images/p1.png">
         <h5>Straight Cuff Sleeved Organza Shirt</h5>
-        <div class="star">
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-        </div>
         <h6 class="price">$218</h6>
         <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
       </div>
@@ -106,27 +99,12 @@
       <div class="product-box">
         <img src="Images/p2.png">
           <h5>Straight Collared Neck Mesh Shirt</h5>
-          <div class="star">
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-          </div>
           <h6 class="price">$218</h6>
           <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
         </div>
 
         <div class="product-box">
           <img src="Images/p3.png">
-            <h5>Black Chiffon Top</h5>
-            <div class="star">
-              <i class='bx bxs-star'></i>
-              <i class='bx bxs-star'></i>
-              <i class='bx bxs-star'></i>
-              <i class='bx bxs-star'></i>
-              <i class='bx bxs-star'></i>
-            </div>
             <h6 class="price">$600</h6>
             <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
           </div>
@@ -134,13 +112,6 @@
           <div class="product-box">
             <img src="Images/p4.png">
               <h5>Peplum Sleeveless Silk Chiffon Top</h5>
-              <div class="star">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-              </div>
               <h6 class="price">$600</h6>
               <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
             </div>
@@ -148,13 +119,6 @@
             <div class="product-box">
               <img src="Images/p5.png">
                 <h5>Peplum Sleeveless Silk Chiffon Top</h5>
-                <div class="star">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                </div>
                 <h6 class="price">$570</h6>
                 <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
               </div>
@@ -162,13 +126,6 @@
               <div class="product-box">
                 <img src="Images/p6.png">
                   <h5>Peplum Sleeveless Silk Chiffon Top</h5>
-                  <div class="star">
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                  </div>
                   <h6 class="price">$600</h6>
                   <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
                 </div>
@@ -176,13 +133,6 @@
                 <div class="product-box">
                   <img src="Images/p7.png">
                     <h5>Peplum Sleeveless Silk Chiffon Top</h5>
-                    <div class="star">
-                      <i class='bx bxs-star'></i>
-                      <i class='bx bxs-star'></i>
-                      <i class='bx bxs-star'></i>
-                      <i class='bx bxs-star'></i>
-                      <i class='bx bxs-star'></i>
-                    </div>
                     <h6 class="price">$410</h6>
                     <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
                   </div>
@@ -202,10 +152,26 @@
   //fetching products
   $select_query = "SELECT * FROM `products` ";
   $result_query = mysqli_query($conn, $select_query);
-  $row = mysqli_fetch_assoc($result_query);
-  echo $row['product_title'];
+  // $row = mysqli_fetch_assoc($result_query);
+  // echo $row['product_title'];
+
+  while($row = mysqli_fetch_assoc($result_query)){
+     $productID = $row['product_id'];
+     $productTitle = $row['product_title'];
+     $productImage = $row['product_image'];
+     $productPrice = $row['product_price']; 
+     $categoryID = $row['category_id']; 
+     echo "<div class='product-box'>
+        <img src='admin_area/product_images/$productImage'>
+          <h5>$productTitle</h5>
+          <h6 class='price'>$productPrice</h6>
+          <a href='#'><i class='bx bxs-shopping-bag-alt' ></i></a>
+        </div>";
+
+  }
   ?>
-  <div class="product-box">
+
+<!-- <div class="product-box">
         <img src="Images/p2.png">
           <h5>Straight Collared Neck Mesh Shirt</h5>
           <div class="star">
@@ -217,10 +183,7 @@
           </div>
           <h6 class="price">$218</h6>
           <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
-        </div>
-
-
-
+        </div> -->
 
 
 
