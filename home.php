@@ -47,7 +47,7 @@
 
           <!-- Navbar Icons -->
           <div class="d-flex align-items-center me-3">
-            <a href="#" class="text-dark me-3"><i class="bx bx-user bx-sm"></i></a>
+            <a href="user_page.php" class="text-dark me-3"><i class="bx bx-user bx-sm"></i></a>
             <a href="#" class="text-dark me-3"><i class="bx bx-cart bx-sm"></i></a>
             <form class="d-flex me-3" role="search">
             <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">

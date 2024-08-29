@@ -1,5 +1,5 @@
 <?php
-@include 'config.php';
+include 'config.php';
 
 ?>
 <html>
@@ -53,8 +53,8 @@
             <a href="#" class="text-dark me-3"><i class="bx bx-user bx-sm"></i></a>
             <a href="#" class="text-dark me-3"><i class="bx bx-cart bx-sm"></i></a>
             <form class="d-flex me-3" role="search">
-            <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-dark btn-sm ms-1" type="submit">
+            <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search" name="search_data">
+            <button class="btn btn-outline-dark btn-sm ms-1" type="submit" name="search_data_product">
               <i class="bx bx-search"></i>
             </button>
           </div>
@@ -150,7 +150,7 @@
   <?php
 
   //fetching products
-  $select_query = "SELECT * FROM `products` ";
+  $select_query = "SELECT * FROM `products` ORDER BY rand()";
   $result_query = mysqli_query($conn, $select_query);
   // $row = mysqli_fetch_assoc($result_query);
   // echo $row['product_title'];
