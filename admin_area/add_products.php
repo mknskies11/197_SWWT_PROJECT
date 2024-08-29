@@ -3,30 +3,36 @@ include('../config.php');
 
 if(isset($_POST['addProduct_submit'])){
   $productTitle = $_POST['product_title'];
-  $productDesc = $_POST['product_desc'];
   $productCategories = $_POST['product_categories'];
   $productPrice = $_POST['product_price'];
+  $productStatus = 'true';
 
   //accessing images
-  $productImage = $_POST['product_image']['imgName'];
+  $productImage = $_FILES['product_image']['name'];
 
   //accessing image temporary name
-  $productTempImage = $_POST['product_image']['imgTempName'];
+  $productTempImage = $_FILES['product_image']['tmp_name'];
 
   //checking empty condition
-  if($productTitle == '' or $productDesc == '' or $productCategories == '' or $productPrice == '' or $productImage == ''){
+  if($productTitle == '' or $productCategories == '' or $productPrice == '' or $productImage == ''){
     echo "<script>alert('Please fill all the fields')</script>";
     exit();
   }
   else{
-    move_uploaded_file($productTempImage, "./product_image/$productImage");
+    move_uploaded_file($productTempImage, "./product_images/$productImage");
 
     //insert query
-    $insert_product = "INSERT INTO `products` (product_title, product_description, category_id, product_image, product_price, date, status)"
+    $insert_product = "INSERT INTO `products` (product_title,category_id,product_image,product_price,date,status) VALUES ('$productTitle','$productCategories','$productImage','$productPrice',NOW(),'$productStatus')";
+    $result_query = mysqli_query($conn, $insert_product);
+
+    if($result_query){
+      echo "<script>alert('Product has been added successfully!')</script>";
+    }
   }
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -99,12 +105,6 @@ if(isset($_POST['addProduct_submit'])){
     <div class="form-outline mb-4 w-50 m-auto">
       <label for="product_title" class="form-label">Product Title</label>
       <input type="text" name="product_title" id="product-title" class="form-control" placeholder="Enter Product Title" autocomplete="off" required="required">
-    </div>
-
-    <!--Product Title-->
-    <div class="form-outline mb-4 w-50 m-auto">
-      <label for="product_desc" class="form-label">Product Description</label>
-      <input type="text" name="product_desc" id="product-title" class="form-control" placeholder="Enter Product Description" autocomplete="off" required="required">
     </div>
 
     <!--Categories-->
