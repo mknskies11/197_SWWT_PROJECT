@@ -2,31 +2,29 @@
 include 'config.php';
 
 //getting products
-function get_all_products(){
+function getProducts(){
     global $conn;
+    
+  $select_query = "SELECT * FROM `products` ORDER BY rand()";
+  $result_query = mysqli_query($conn, $select_query);
+//   $row = mysqli_fetch_assoc($result_query);
+//   echo $row['product_title'];
 
-    //condition to check isset or not
-    if(!isset($_GET['category'])){
-    $select_query = "SELECT * FROM `products` ORDER BY rand()";
-$result_query = mysqli_query($conn, $select_query);
-// $row = mysqli_fetch_assoc($result_query);
-// echo $row['product_title'];
+  while($row = mysqli_fetch_assoc($result_query)){
+     $productID = $row['product_id'];
+     $productTitle = $row['product_title'];
+     $productImage = $row['product_image'];
+     $productPrice = $row['product_price']; 
+     $categoryID = $row['category_id']; 
+     echo "<div class='product-box'>
+        <img src='admin_area/product_images/$productImage'>
+          <h5>$productTitle</h5>
+          <h6 class='price'>$productPrice</h6>
+          <a href='#'><i class='bx bxs-shopping-bag-alt' ></i></a>
+        </div>";
 
-while($row = mysqli_fetch_assoc($result_query)){
-   $productID = $row['product_id'];
-   $productTitle = $row['product_title'];
-   $productImage = $row['product_image'];
-   $productPrice = $row['product_price']; 
-   $categoryID = $row['category_id']; 
-   echo "<div class='product-box'>
-      <img src='admin_area/product_images/$productImage'>
-        <h5>$productTitle</h5>
-        <h6 class='price'>$productPrice</h6>
-        <a href='../cart.php'><i class='bx bxs-shopping-bag-alt' >$productID</i></a>
-      </div>";
-
-}
-    }
+  }
+  
 }
 
 
