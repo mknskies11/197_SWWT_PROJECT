@@ -1,6 +1,6 @@
 <?php
-
 @include 'config.php';
+
 ?>
 <html>
 
@@ -82,31 +82,16 @@
   </div>
   <!--Header video PRODUCTS ends here-->
 
-  <?php
-      //fetching products
-      $select_query = "SELECT * FROM `products` ";
-      $result_query = mysqli_query($conn, $select_query);
-
-      // $row = mysqli_fetch_assoc($result_query);
-      // echo $row['product_title'];
-      while($row = mysqli_fetch_assoc($result_query)){
-        $productID = $row = mysqli_fetch_assoc($result_query)
-      }
-      ?>
-
-
   <!--NEW ARRIVALS begins here-->
   <div class="newarrivals-heading">
     <h2>Latest & Hottest<br><span>NEW ARRIVALS</span></h2>
   </div>
   <div class="newarrivals-container">
 
-
-
 <!--product 1 -->
     <div class="product-box">
       <img src="Images/p1.png">
-        <h5 name="product_title">Straight Cuff Sleeved Organza Shirt</h5>
+        <h5>Straight Cuff Sleeved Organza Shirt</h5>
         <div class="star">
           <i class='bx bxs-star'></i>
           <i class='bx bxs-star'></i>
@@ -118,53 +103,127 @@
         <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
       </div>
 
-  <!--Footer-->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="footer-col">
-          <h5>MonoFam</h5>
-          <ul>
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="collection.html">Collections</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="contactus.html">Contact Us</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Events</h5>
-          <ul>
-            <li><a href="https://edition.cnn.com/style/nyfw-spring-summer-2024-highlights/index.html" target="_blank">Fashion Week</a></li>
-            <li><a href="https://www.vogue.com/slideshow/met-gala-2023-red-carpet-live-celebrity-fashion" target="_blank">Met Gala</a></li>
-            <li><a href="#">Campaign Events</a></li>
-            <li><a href="#">Pop-Up Stores</a></li>
-            <li><a href="#">Virtual Events</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>More</h5>
-          <ul>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Archive</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Follow Us</h5>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-discord"></i></a>
+      <div class="product-box">
+        <img src="Images/p2.png">
+          <h5>Straight Collared Neck Mesh Shirt</h5>
+          <div class="star">
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
           </div>
+          <h6 class="price">$218</h6>
+          <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
         </div>
-      </div>
+
+        <div class="product-box">
+          <img src="Images/p3.png">
+            <h5>Black Chiffon Top</h5>
+            <div class="star">
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+            </div>
+            <h6 class="price">$600</h6>
+            <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
+          </div>
+
+          <div class="product-box">
+            <img src="Images/p4.png">
+              <h5>Peplum Sleeveless Silk Chiffon Top</h5>
+              <div class="star">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+              </div>
+              <h6 class="price">$600</h6>
+              <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
+            </div>
+
+            <div class="product-box">
+              <img src="Images/p5.png">
+                <h5>Peplum Sleeveless Silk Chiffon Top</h5>
+                <div class="star">
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                </div>
+                <h6 class="price">$570</h6>
+                <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
+              </div>
+
+              <div class="product-box">
+                <img src="Images/p6.png">
+                  <h5>Peplum Sleeveless Silk Chiffon Top</h5>
+                  <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                  </div>
+                  <h6 class="price">$600</h6>
+                  <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
+                </div>
+
+                <div class="product-box">
+                  <img src="Images/p7.png">
+                    <h5>Peplum Sleeveless Silk Chiffon Top</h5>
+                    <div class="star">
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                    </div>
+                    <h6 class="price">$410</h6>
+                    <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
+                  </div>
     </div>
-  </footer>
+  </div>
+<!--NEW ARRIVALS end here-->
+
+
+<!--SPRING DRESSES begins here-->
+<div class="newarrivals-heading">
+    <h2>Newest & Elegant<br><span>SPRING DRESS COLLECTION</span></h2>
+  </div>
+  <div class="newarrivals-container">
+
+  <?php
+
+  //fetching products
+  $select_query = "SELECT * FROM `products` ";
+  $result_query = mysqli_query($conn, $select_query);
+  $row = mysqli_fetch_assoc($result_query);
+  echo $row['product_title'];
+  ?>
+  <div class="product-box">
+        <img src="Images/p2.png">
+          <h5>Straight Collared Neck Mesh Shirt</h5>
+          <div class="star">
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+          </div>
+          <h6 class="price">$218</h6>
+          <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
+        </div>
+
+
+
+
+
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

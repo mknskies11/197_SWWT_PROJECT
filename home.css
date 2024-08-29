@@ -518,7 +518,7 @@ body{
     margin-top: 2rem;
     background: #ffffff;
 }
-.newarrivals-container .product-box{
+.newarrivals-container .product_card{
     padding: 20px;
     border-radius: 0.5rem;
     position: relative;
@@ -538,6 +538,10 @@ body{
     font-size: 1rem;
     font-weight: 600;
     margin-top: 0.5rem;
+}
+.newarrivals-container .product-box h6{
+    font-size: 7px;
+    color: #1c1c1c;
 }
 .newarrivals-container .product-box .price{
     font-size: 1rem;
