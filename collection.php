@@ -26,7 +26,7 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link mx-lg-2" aria-current="page" href="Home.html">Home</a>
+              <a class="nav-link mx-lg-2" aria-current="page" href="home.php">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active mx-lg-2" href="collection.php">Collections</a>
@@ -46,13 +46,11 @@
 
                 <!-- Navbar Icons -->
           <div class="d-flex align-items-center me-3">
-            <a href="#" class="text-dark me-3"><i class="bx bx-user bx-sm"></i></a>
+            <a href="user_page.php" class="text-dark me-3"><i class="bx bx-user bx-sm"></i></a>
             <a href="#" class="text-dark me-3"><i class="bx bx-cart bx-sm"></i></a>
             <form class="d-flex me-3" role="search">
-            <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-dark btn-sm ms-1" type="submit">
-              <i class="bx bx-search"></i>
-            </button>
+            <input class="form-control form-control-sm" type="search" placeholder="Explore Outfits..." aria-label="Search" name="search_data">
+            <input type="submit" value="Search" class="btn" name="search_data_product">
           </div>
 
       <a href="login_form.php" class="login-button">Login</a>

@@ -27,6 +27,10 @@ function getProducts(){
   
 }
 
+//searching products function
+function search_product(){
+    
+}
 
 
 

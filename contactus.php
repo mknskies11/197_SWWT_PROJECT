@@ -52,10 +52,8 @@
             <a href="#" class="text-dark me-3"><i class="bx bx-user bx-sm"></i></a>
             <a href="#" class="text-dark me-3"><i class="bx bx-cart bx-sm"></i></a>
             <form class="d-flex me-3" role="search">
-            <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-dark btn-sm ms-1" type="submit">
-              <i class="bx bx-search"></i>
-            </button>
+            <input class="form-control form-control-sm" type="search" placeholder="Explore Outfits..." aria-label="Search" name="search_data">
+            <input type="submit" value="Search" class="btn" name="search_data_product">
           </div>
 
         <a href="login_form.php" class="login-button">Login</a>

@@ -18,7 +18,7 @@
   <header>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand me-auto" href="#"><img src="Images/logo.png" width="50%"></a>
+        <a class="navbar-brand me-auto" href="home.php"><img src="Images/logo.png" width="50%"></a>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="Images/logo.png" width="70%"></h5>
@@ -50,10 +50,8 @@
             <a href="user_page.php" class="text-dark me-3"><i class="bx bx-user bx-sm"></i></a>
             <a href="#" class="text-dark me-3"><i class="bx bx-cart bx-sm"></i></a>
             <form class="d-flex me-3" role="search">
-            <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-dark btn-sm ms-1" type="submit">
-              <i class="bx bx-search"></i>
-            </button>
+            <input class="form-control form-control-sm" type="search" placeholder="Explore Outfits..." aria-label="Search" name="search_data">
+            <input type="submit" value="Search" class="btn" name="search_data_product">
           </div>
 
 
