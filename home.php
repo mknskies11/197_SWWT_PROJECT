@@ -1,3 +1,10 @@
+<?php
+include 'config.php';
+include 'functions/common_function.php';
+
+?>
+
+
 <html>
 
 <head>
@@ -115,6 +122,11 @@
   </div>
   <!--Bootstrap carousal ends here-->
 
+  <?php
+  // $ip = getIPAddress();
+  // echo 'User Real IP Address - '.$ip;
+  
+  ?>
 
   <!--BW:BRIDAL banner starts here-->
   <div class="bwbridal-banner">

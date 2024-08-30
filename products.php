@@ -54,9 +54,11 @@ include 'functions/common_function.php';
           <div class="d-flex align-items-center me-3">
             <a href="user_page.php" class="text-dark me-3"><i class="bx bx-user bx-sm"></i></a>
             <a href="#" class="text-dark me-3"><i class="bx bx-cart bx-sm"></i></a>
-            <form class="d-flex me-3" role="search" action="search_product.php" method="get">
+            <form class="d-flex me-3" role="search">
             <input class="form-control form-control-sm" type="search" placeholder="Explore Outfits..." aria-label="Search" name="search_data">
             <input type="submit" value="Search" class="btn" name="search_data_product">
+            </form>
+
           </div>
 
 
@@ -151,7 +153,12 @@ include 'functions/common_function.php';
   <?php
       //calling function
       getProducts();
-   ?>
+
+
+     //calling cart function
+     cart();
+  
+  ?>
 
 <!-- <div class="product-box">
         <img src="Images/p2.png">
