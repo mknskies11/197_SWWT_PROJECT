@@ -53,6 +53,7 @@ function cart(){
     global $conn;
     $get_ip_add = getIPAddress(); 
     $get_product_id = $_GET['add_to_cart'];
+
     $select_query = "SELECT * FROM `cart_details` WHERE ip_address= '$get_ip_add' AND product_id = $get_product_id";
     $result_query = mysqli_query($conn, $select_query);
 
@@ -71,6 +72,33 @@ function cart(){
   }
 
 }
+
+
+
+
+//function to get CART ITEM NUMBERS
+function cart_item(){
+  if(isset($_GET['add_to_cart'])){
+    global $conn;
+    $get_ip_add = getIPAddress(); 
+
+    $select_query = "SELECT * FROM `cart_details` WHERE ip_address= '$get_ip_add'";
+    $result_query = mysqli_query($conn, $select_query);
+
+    $count_cart_items = mysqli_num_rows($result_query);
+
+  }else{
+    global $conn;
+    $get_ip_add = getIPAddress(); 
+
+    $select_query = "SELECT * FROM `cart_details` WHERE ip_address= '$get_ip_add'";
+    $result_query = mysqli_query($conn, $select_query);
+
+    $count_cart_items = mysqli_num_rows($result_query);
+    }
+    echo $count_cart_items;
+  }
+
 
 
 ?>  
