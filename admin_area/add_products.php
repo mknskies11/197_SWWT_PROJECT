@@ -3,6 +3,7 @@ include('../config.php');
 
 if(isset($_POST['addProduct_submit'])){
   $productTitle = $_POST['product_title'];
+  $productKeywords = $_POST['product_keywords'];
   $productCategories = $_POST['product_categories'];
   $productPrice = $_POST['product_price'];
   $productStatus = 'true';
@@ -14,7 +15,7 @@ if(isset($_POST['addProduct_submit'])){
   $productTempImage = $_FILES['product_image']['tmp_name'];
 
   //checking empty condition
-  if($productTitle == '' or $productCategories == '' or $productPrice == '' or $productImage == ''){
+  if($productTitle == '' or $productKeywords == '' or $productCategories == '' or $productPrice == '' or $productImage == ''){
     echo "<script>alert('Please fill all the fields')</script>";
     exit();
   }
@@ -22,7 +23,7 @@ if(isset($_POST['addProduct_submit'])){
     move_uploaded_file($productTempImage, "./product_images/$productImage");
 
     //insert query
-    $insert_product = "INSERT INTO `products` (product_title,category_id,product_image,product_price,date,status) VALUES ('$productTitle','$productCategories','$productImage','$productPrice',NOW(),'$productStatus')";
+    $insert_product = "INSERT INTO `products` (product_title,product_keywords,category_id,product_image,product_price,date,status) VALUES ('$productTitle','$productKeywords','$productCategories','$productImage','$productPrice',NOW(),'$productStatus')";
     $result_query = mysqli_query($conn, $insert_product);
 
     if($result_query){
@@ -106,6 +107,12 @@ if(isset($_POST['addProduct_submit'])){
     <div class="form-outline mb-4 w-50 m-auto">
       <label for="product_title" class="form-label">Product Title</label>
       <input type="text" name="product_title" id="product-title" class="form-control" placeholder="Enter Product Title" autocomplete="off" required="required">
+    </div>
+
+        <!--Product Keywords-->
+        <div class="form-outline mb-4 w-50 m-auto">
+      <label for="product_keywords" class="form-label">Product Keywords</label>
+      <input type="text" name="product_keywords" id="product_keywords" class="form-control" placeholder="Enter Keywords (Separate by commas)" autocomplete="off" required="required">
     </div>
 
     <!--Categories-->
