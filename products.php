@@ -52,12 +52,7 @@ include 'functions/common_function.php';
 
                 <!-- Navbar Icons -->
           <div class="d-flex align-items-center me-3">
-            <a href="user_page.php" class="text-dark me-3"><i class="bx bx-user bx-sm"></i></a>
-            <a href="#" class="text-dark me-3"><i class="bx bx-cart bx-sm"></i><?php cart_item(); ?></a>
-            <form class="d-flex me-3" role="search">
-            <input class="form-control form-control-sm" type="search" placeholder="Explore Outfits..." aria-label="Search" name="search_data">
-            <input type="submit" value="Search" class="btn" name="search_data_product">
-            </form>
+            <a href="#" class="text-dark me-3"><i class="bx bx-cart bx-sm"></i></a>
 
           </div>
 
@@ -70,6 +65,11 @@ include 'functions/common_function.php';
     </div>
   </nav>
   <!--Bootstrap Navbar ends here-->
+
+  <?php
+  //calling cart function
+  cart();
+  ?>
 
 
   <!--Header video PRODUCTS begins here-->
@@ -154,9 +154,6 @@ include 'functions/common_function.php';
       //calling function
       getProducts();
 
-
-     //calling cart function
-     cart();
   
   ?>
 

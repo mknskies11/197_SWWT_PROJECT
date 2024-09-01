@@ -20,7 +20,7 @@ function getProducts(){
         <img src='admin_area/product_images/$productImage'>
           <h5>$productTitle</h5>
           <h6 class='price'>$productPrice</h6>
-          <a href='products.php?add_to_cart=product_id=$productID'><i class='bx bxs-shopping-bag-alt' ></i></a>
+          <a href='products.php?add_to_cart=$productID'><i class='bx bxs-shopping-bag-alt' ></i></a>
         </div>";
 
   }
@@ -49,56 +49,24 @@ function getProducts(){
 
 //cart function
 function cart(){
-  if(isset($_GET['add_to_cart'])){
-    global $conn;
-    $get_ip_add = getIPAddress(); 
-    $get_product_id = $_GET['add_to_cart'];
+if(isset($_GET['add_to_cart'])){
+  global $conn;
+  $get_ip_add = getIPAddress();
+  $get_product_id = $_GET['add_to_cart'];
 
-    $select_query = "SELECT * FROM `cart_details` WHERE ip_address= '$get_ip_add' AND product_id = $get_product_id";
-    $result_query = mysqli_query($conn, $select_query);
+  $select_query = "SELECT * FROM `cart_details` WHERE ip_address='$get_ip_add' AND product_id=$get_product_id";
+  $result_query = mysqli_query($conn, $select_query);
 
-    $num_of_rows = mysqli_num_rows($result_query);
-
-    if($num_of_rows > 0){
-      echo "<script>alert('This item is already included in the cart')</script>";
-      echo "<script>window.open('products.php','_self')</script>";
-    }
-    else{
-      $insert_query = "INSERT INTO `cart_details` (product_id,ip_address,quantity) VALUES ($get_product_id,'$get_ip_add',0)";
-      $result_query = mysqli_query($conn, $insert_query);
-      echo "<script>alert('This item has been successfully added to the cart!')</script>";
-      echo "<script>window.open('products.php','_self')</script>";
-    }
-  }
-
-}
-
-
-
-
-//function to get CART ITEM NUMBERS
-function cart_item(){
-  if(isset($_GET['add_to_cart'])){
-    global $conn;
-    $get_ip_add = getIPAddress(); 
-
-    $select_query = "SELECT * FROM `cart_details` WHERE ip_address= '$get_ip_add'";
-    $result_query = mysqli_query($conn, $select_query);
-
-    $count_cart_items = mysqli_num_rows($result_query);
-
+  $num_of_rows = mysqli_num_rows($result_query);
+if($num_of_rows > 0){
+    echo "<script>alert('This item is already in the cart')</script>";
+    echo "<script>window.open('products.php','_self')</script>";
   }else{
-    global $conn;
-    $get_ip_add = getIPAddress(); 
-
-    $select_query = "SELECT * FROM `cart_details` WHERE ip_address= '$get_ip_add'";
-    $result_query = mysqli_query($conn, $select_query);
-
-    $count_cart_items = mysqli_num_rows($result_query);
-    }
-    echo $count_cart_items;
+    $insert_query = "INSERT INTO `cart_details` (product_id,ip_address,quantity) VALUES ($get_product_id, '$get_ip_add',0)";
+    $result_query = mysqli_query($conn, $insert_query);
+    echo "<script>alert('Successfully added to the cart!')</script>";
+    echo "<script>window.open('products.php','_self')</script>";
   }
-
-
-
+}
+}
 ?>  

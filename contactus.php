@@ -1,4 +1,11 @@
+<?php
 
+include 'config.php';
+include 'functions/common_function.php';
+
+
+
+?>
 <html>
 
 <head>
@@ -47,14 +54,6 @@
           </div>
         </div>
 
-                  <!-- Navbar Icons -->
-          <div class="d-flex align-items-center me-3">
-            <a href="#" class="text-dark me-3"><i class="bx bx-user bx-sm"></i></a>
-            <a href="#" class="text-dark me-3"><i class="bx bx-cart bx-sm"></i></a>
-            <form class="d-flex me-3" role="search">
-            <input class="form-control form-control-sm" type="search" placeholder="Explore Outfits..." aria-label="Search" name="search_data">
-            <input type="submit" value="Search" class="btn" name="search_data_product">
-          </div>
 
         <a href="login_form.php" class="login-button">Login</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
