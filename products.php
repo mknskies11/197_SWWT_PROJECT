@@ -52,7 +52,8 @@ include 'functions/common_function.php';
 
                 <!-- Navbar Icons -->
           <div class="d-flex align-items-center me-3">
-            <a href="#" class="text-dark me-3"><i class="bx bx-cart bx-sm"></i></a>
+            <a href="#" class="text-dark me-3" style="text-decoration: none;"><i class="bx bx-cart bx-sm"></i> <?php cart_item(); ?></a>
+            <p>Total Price: $<?php total_cart_price(); ?></p>
 
           </div>
 
