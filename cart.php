@@ -88,6 +88,7 @@ include 'functions/common_function.php';
             </thead>
             <tbody>
 
+
             <!--PHP Code for dynamic data-->
             <?php
               $get_ip_add = getIPAddress();
@@ -108,6 +109,7 @@ include 'functions/common_function.php';
             $product_values = array_sum($productPrice);
             $total_price += $product_values;
 
+        
             ?>
 
                 <tr>
@@ -129,6 +131,7 @@ include 'functions/common_function.php';
 
                     <td>$<?php echo $price_table?></td>
                     <td>
+                    <input type="checkbox" name="remove_item[]" value="<?php echo $productID ?>">
                     <input type="submit" value="Remove" class="button-action" name="remove_cart">
                     </td>
                     <td>
@@ -153,6 +156,28 @@ include 'functions/common_function.php';
   </div>
   </form>
     
+  <!--Function to REMOVE items-->
+  <?php
+  function remove_cart_items(){
+    global $conn;
+    if(isset($_POST['remove_cart'])){
+      foreach($_POST['remove_item'] as $remove_id){
+        echo $remove_id;
+        $delete_query = "DELETE FROM `cart_details` WHERE product_id = $remove_id";
+        $run_delete = mysqli_query($conn, $delete_query);
+
+        if($run_delete){
+          echo "<script>window.open('cart.php','_self')</script>";
+        }
+      }
+    }
+  }
+  echo $remove_item = remove_cart_items();
+  
+  
+  
+  
+  ?>
 
 
 
