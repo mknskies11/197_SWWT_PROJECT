@@ -16,6 +16,7 @@ include 'functions/common_function.php';
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="backend.css">
 </head>
 
 
@@ -52,7 +53,7 @@ include 'functions/common_function.php';
 
                 <!-- Navbar Icons -->
           <div class="d-flex align-items-center me-3">
-            <a href="#" class="text-dark me-3" style="text-decoration: none;"><i class="bx bx-cart bx-sm"></i> <?php cart_item(); ?></a>
+            <a href="cart.php" class="text-dark me-3" style="text-decoration: none;"><i class="bx bx-cart bx-sm"></i> <?php cart_item(); ?></a>
             <p>Total Price: $<?php total_cart_price(); ?></p>
 
           </div>
@@ -109,6 +110,7 @@ include 'functions/common_function.php';
 
         <div class="product-box">
           <img src="Images/p3.png">
+          <h5>Peplum Sleeveless Silk Chiffon Top</h5>
             <h6 class="price">$600</h6>
             <a href="#"><i class='bx bxs-shopping-bag-alt' ></i></a>
           </div>
@@ -147,7 +149,7 @@ include 'functions/common_function.php';
 
 <!--SPRING DRESSES begins here-->
 <div class="newarrivals-heading">
-    <h2>Newest & Elegant<br><span>SPRING DRESS COLLECTION</span></h2>
+    <h2>TROPICAL SUMMER<br><span>SUMMER DRESS COLLECTION</span></h2>
   </div>
   <div class="newarrivals-container">
 

@@ -19,7 +19,7 @@ function getProducts(){
      echo "<div class='product-box'>
         <img src='admin_area/product_images/$productImage'>
           <h5>$productTitle</h5>
-          <h6 class='price'>$productPrice</h6>
+          <h6 class='price'>$ $productPrice</h6>
           <a href='products.php?add_to_cart=$productID'><i class='bx bxs-shopping-bag-alt' ></i></a>
         </div>";
 

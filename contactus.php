@@ -45,7 +45,7 @@ include 'functions/common_function.php';
                 <a class="nav-link mx-lg-2" href="products.php">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="contactus.php">Contact Us</a>
+                <a class="nav-link active mx-lg-2" href="contactus.php">Contact Us</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link mx-lg-2" href="aboutus.php">About Us</a>
