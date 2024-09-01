@@ -76,7 +76,18 @@ include 'functions/common_function.php';
     <div class="cart-row">
         <form action="" method = "post">
         <table class="table-bordered text-center">
-            <thead>
+            
+
+
+            <!--PHP Code for dynamic data-->
+            <?php
+              $get_ip_add = getIPAddress();
+              $total_price = 0;
+              $cart_query = "SELECT * FROM `cart_details` WHERE ip_address='$get_ip_add'";
+              $result = mysqli_query($conn, $cart_query);
+              $result_count = mysqli_num_rows($result); //count the number of rows inside the database
+              if($result_count > 0){
+                  echo "<thead>
                 <tr>
                     <th>Title</th>
                     <th>Outfit</th>
@@ -86,16 +97,8 @@ include 'functions/common_function.php';
                     <th>Update Cart</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody>";
 
-
-            <!--PHP Code for dynamic data-->
-            <?php
-              $get_ip_add = getIPAddress();
-              $total_price = 0;
-              $cart_query = "SELECT * FROM `cart_details` WHERE ip_address='$get_ip_add'";
-              $result = mysqli_query($conn, $cart_query);
-            
               while($row = mysqli_fetch_array($result)){
                 $productID = $row['product_id'];
                 $select_products = "SELECT * FROM `products` WHERE product_id='$productID'";
@@ -108,7 +111,6 @@ include 'functions/common_function.php';
             $productImage = $row_product_price['product_image'];
             $product_values = array_sum($productPrice);
             $total_price += $product_values;
-
         
             ?>
 
@@ -140,8 +142,12 @@ include 'functions/common_function.php';
                 </tr>
 
                 <?php
+                }
                                 }
                             }
+                else{
+                  echo "<p class='text-center'>There are no items currently in the cart</p>";
+                }
                 
                 ?>
             </tbody>
@@ -151,7 +157,7 @@ include 'functions/common_function.php';
     <div>
         <br><h6 class="px-3">Total Price: $ <?php echo $total_price?></h6>
         <a href="products.php"><button class="button-action" href="products.php">Continue exploring</button></a>
-        <button class="button-action">Checkout</button>
+        <button class="button-action"><a href="checkout.php" style="text-decoration: none; color: #ffffff;">Checkout</button>
     </div>
   </div>
   </form>

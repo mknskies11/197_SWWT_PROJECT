@@ -15,6 +15,7 @@ body {
     height: 100vh;
     margin: 0;
     padding-top: 200px; /* Adjust this value to offset the navbar height */
+    
 }
 
 /* Navbar Styling */
