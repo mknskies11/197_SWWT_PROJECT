@@ -93,11 +93,12 @@ include 'functions/common_function.php';
                     <td>9000</td>
                     <td><input type="checkbox"></td>
                     <td>
-                        <p>Edit</p>
-                        <p>Delete</p>
+                        <button class="button-action">Edit</button>
+                        <button class="button-action">Delete</button>
                     </td>
                 </tr>
             </tbody>
+
         </table>
     </div>
   </div>
