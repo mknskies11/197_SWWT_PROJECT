@@ -12,7 +12,7 @@ include 'config.php'; // Include your database connection
     <title>Monochrome: Checkout</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="checkout.css">
 </head>
 
 <body>
@@ -53,35 +53,27 @@ include 'config.php'; // Include your database connection
         </div>
     </nav>
 
+
+
     <!-- Checkout Form -->
-   <div class="form-container">
-    <form action="" method="post" enctype="multipart/form-data">
-    <h3>Checkout</h3>
+  <div class="form-container">
+    <form action="" method="post">
+      <h3>Checkout</h3>
 
-    <div class="form-outline mb-4 w-50 m-auto">
-      <input type="text" name="user_name_full" class="form-control" placeholder="Enter your full name" autocomplete="off" required="required">
-    </div>
-
-    <div class="form-outline mb-4 w-50 m-auto">
-      <input type="email" name="user_email" class="form-control" placeholder="Enter your email" autocomplete="off" required="required">
-    </div>
-
-    <div class="form-outline mb-4 w-50 m-auto">
-      <input type="text" name="user_address" class="form-control" placeholder="Enter your address" autocomplete="off" required="required">
-    </div>
-
-    <div class="form-outline mb-4 w-50 m-auto">
-      <select name="payment_type" class="form-select">
-        <option value="">--Select Payment Type--</option>
-        <option value="">Credit Card</option>
-        <option value="">Debit Card</option>
-        <option value="">PayPal</option>
-        <option value="">Cash on Delivery (Currently not available)</option>
-    </div>
-
-
-    <button type="submit" class="complete-payment-button">Complete Payment</button>
-</form>
+      <input type="text" name="user_name" required placeholder="Enter your full name">
+      <input type="text" name="user_address" required placeholder="Enter your address">
+      <input type="text" name="user_email" required placeholder="Enter your email">
+      <select name="payment_type">
+        <option value="payment_select">--Select Payment Method--</option>
+        <option value="credit_card">Credit Card</option>
+        <option value="debit_card">Debit Card</option>
+        <option value="paypal">PayPal</option>
+        <option value="cash_on_delivery">Cash on Delivery (Currently not available)</option>
+      </select>
+      <input type="submit" value="proceed to pay" class="form-btn" name="submit">
+      <p>Changed decision? <a href="cart.php">Go back</a></p>
+    </form>
+  </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

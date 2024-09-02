@@ -181,8 +181,6 @@ include 'functions/common_function.php';
   echo $remove_item = remove_cart_items();
   
   
-  
-  
   ?>
 
 
