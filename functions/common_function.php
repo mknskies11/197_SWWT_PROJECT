@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+// include 'config.php';
 
 //getting products
 function getProducts(){

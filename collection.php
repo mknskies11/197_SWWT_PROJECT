@@ -2,6 +2,7 @@
 
 include 'config.php';
 include 'functions/common_function.php';
+session_start();
 
 ?>
 <html>
@@ -15,7 +16,7 @@ include 'functions/common_function.php';
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 
 
@@ -32,7 +33,7 @@ include 'functions/common_function.php';
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link mx-lg-2" aria-current="page" href="home.php">Home</a>
+              <a class="nav-link mx-lg-2" aria-current="page" href="../home.php">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active mx-lg-2" href="collection.php">Collections</a>
@@ -50,7 +51,34 @@ include 'functions/common_function.php';
         </div>
       </div>
 
-      <a href="login_form.php" class="login-button">Login</a>
+       <!-- Navbar Icons -->
+       <div class="d-flex align-items-center me-3">
+
+       <?php
+              if (!isset($_SESSION['user_name'])) {
+                echo "<p>Guest</p>";
+              } else {
+                // Use curly braces to properly parse the session variable inside the string
+                echo "<p>{$_SESSION['user_name']}</p>";
+              }
+              ?>
+
+            <a href="user_area/profile.php" class="text-dark me-3"><i class='bx bx-user bx-sm'></i></a>
+            <a href="cart.php" class="text-dark me-3" style="text-decoration: none;"><i class="bx bx-cart bx-sm"></i> <?php cart_item(); ?></a>
+            <p>Total Price: $<?php total_cart_price(); ?></p>
+
+          </div>
+
+
+          <?php
+            if (!isset($_SESSION['user_name'])){
+                echo "<a href='user_area/user_login.php' class='login-button'>Login</a>";
+            }
+            else{
+                echo "<a href='user_area/logout.php' class='login-button'>Logout</a>";
+            }
+            
+            ?>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

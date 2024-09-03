@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 include 'functions/common_function.php';
-
+session_start();
 
 ?>
 <html>
@@ -53,11 +53,29 @@ include 'functions/common_function.php';
 
                 <!-- Navbar Icons -->
           <div class="d-flex align-items-center me-3">
+          <?php
+              if (!isset($_SESSION['user_name'])) {
+                echo "<p>Guest</p>";
+              } else {
+                // Use curly braces to properly parse the session variable inside the string
+                echo "<p>{$_SESSION['user_name']}</p>";
+              }
+              ?>
+
+            <a href="user_area/profile.php" class="text-dark me-3"><i class='bx bx-user bx-sm'></i></a>
             <a href="#" class="text-dark me-3" style="text-decoration: none;"><i class="bx bx-cart bx-sm"></i> <?php cart_item(); ?></a>
           </div>
 
 
-      <a href="login_form.php" class="login-button">Login</a>
+          <?php
+            if (!isset($_SESSION['user_name'])){
+                echo "<a href='user_area/user_login.php' class='login-button'>Login</a>";
+            }
+            else{
+                echo "<a href='user_area/logout.php' class='login-button'>Logout</a>";
+            }
+            
+            ?>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -156,7 +174,7 @@ include 'functions/common_function.php';
     <div>
         <br><h6 class="px-3">Total Price: $ <?php echo $total_price?></h6>
         <button class="button-action"><a href="products.php" style="text-decoration: none; color: #ffffff;">Continue exploring</button></a>
-        <button class="button-action"><a href="checkout.php" style="text-decoration: none; color: #ffffff;">Checkout</button>
+        <button class="button-action"><a href="user_area/checkout.php" style="text-decoration: none; color: #ffffff;">Checkout</button>
     </div>
   </div>
   </form>

@@ -1,6 +1,7 @@
 <?php
 include 'config.php';
 include 'functions/common_function.php';
+session_start();
 
 ?>
 
@@ -12,11 +13,11 @@ include 'functions/common_function.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 
 
@@ -52,15 +53,42 @@ include 'functions/common_function.php';
           </div>
         </div>
 
-        <a href="login_form.php" class="login-button">Login</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav>
-  </header>
-  <!--bootstrap navigation bar ends here-->
+        <!-- Navbar Icons -->
+        <div class="d-flex align-items-center me-3">
+
+            <?php
+              if (!isset($_SESSION['user_name'])) {
+                echo "<p>Guest</p>";
+              } else {
+                // Use curly braces to properly parse the session variable inside the string
+                echo "<p>{$_SESSION['user_name']}</p>";
+              }
+              ?>
+
+            <a href="user_area/profile.php" class="text-dark me-3"><i class='bx bx-user bx-sm'></i></a>
+            <a href="cart.php" class="text-dark me-3" style="text-decoration: none;"><i class="bx bx-cart bx-sm"></i> <?php cart_item(); ?></a>
+            <p>Total Price: $<?php total_cart_price(); ?></p>
+
+          </div>
+
+
+          <?php
+            if (!isset($_SESSION['user_name'])){
+                echo "<a href='user_area/user_login.php' class='login-button'>Login</a>";
+            }
+            else{
+                echo "<a href='user_area/logout.php' class='login-button'>Logout</a>";
+            }
+            
+            ?>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</header>
+  <!--Bootstrap Navbar ends here-->
 
 
   <!--carousal starts here-->
