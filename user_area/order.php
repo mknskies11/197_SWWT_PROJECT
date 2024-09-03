@@ -37,4 +37,30 @@ $get_cart = "SELECT * FROM `cart_details`";
 $run_cart = mysqli_query($conn, $get_cart);
 $get_item_quantity = mysqli_fetch_array($run_cart);
 $quantity = $get_item_quantity['quantity'];
+
+if($quantity == 0){
+    $quantity = 1;
+    $subtotal = $total_price;
+}
+else{
+    $quantity = $quantity;
+    $subtotal = $total_price * $quantity;
+}
+
+$insert_orders = "INSERT INTO `user_orders` (user_id,amount_due,invoice_number,total_products,order_date,order_status) VALUES ($user_id,$subtotal,$invoice_number,$count_products,NOW(),'$status')";
+$result_query = mysqli_query($conn, $insert_orders);
+if($result_query){
+    echo "<script>alert('Orders have been submitted successfully')</script>";
+    echo "<script>window.open('profile2.php','_self')</script>";
+}
+
+
+//orders pending
+$insert_pending_orders = "INSERT INTO `orders_pending` (user_id,invoice_number,product_id,quantity,order_status) VALUES ($user_id,$invoice_number,$productID,$quantity,'$status')";
+$result_pending_orders = mysqli_query($conn, $insert_pending_orders);
+
+
+//delete items from cart
+$empty_cart = "DELETE FROM `cart_details` WHERE ip_address='$get_ip_address'";
+$result_delete = mysqli_query($conn, $empty_cart);
 ?>

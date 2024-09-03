@@ -125,9 +125,6 @@ if (!isset($_SESSION['user_name'])) {
 </head>
 
 <body>
-    <!-- Add the checkout form or any other content for logged-in users -->
-    <h2>Welcome to the checkout page!</h2>
-    <!-- Your checkout form goes here -->
 </body>
 
 </html>
