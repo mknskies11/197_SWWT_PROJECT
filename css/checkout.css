@@ -81,7 +81,7 @@ body {
 }
 
 /* Form Container */
-.form-container {
+.form-container-checkout {
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -90,7 +90,7 @@ body {
     padding-bottom: 20px;
 }
 
-.form-container form {
+.form-container-checkout form {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -100,15 +100,15 @@ body {
     border: #ffffff;
 }
 
-.form-container h3 {
+.form-container-checkout h3 {
     font-size: 30px;
     text-transform: uppercase;
     margin-bottom: 50px;
     color: #fff;
 }
 
-.form-container form input,
-.form-container form select {
+.form-container-checkout form input,
+.form-container-checkout form select {
     width: 100%;
     padding: 10px 15px;
     font-size: 17px;
@@ -117,38 +117,38 @@ body {
     border-radius: 15px;
 }
 
-.form-container form select option {
+.form-container-checkout form select option {
     background: #ffffff;
 }
 
-.form-container form .form-btn {
+.form-container-checkout form .form-btn {
     background: #333;
-    color: #ffffff;
+    color: #000000;
     text-transform: capitalize;
     font-size: 20px;
     cursor: pointer;
     border-radius: 30px;
-    background: #000000;
+    background: #ffffff;
 }
 
-.form-container form .form-btn:hover {
-    background: #333;
-    color: #eee;
+.form-container-checkout form .form-btn:hover {
+    background: #787976;
+    color: #000000;
 }
 
-.form-container form p {
+.form-container-checkout form p {
     margin-top: 10px;
     font-size: 14px;
     color: #ffffff;
 }
 
-.form-container form a {
+.form-container-checkout form a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 }
 
-.form-container form .error-msg {
+.form-container-checkout form .error-msg {
     margin: 10px 0;
     display: block;
     background: crimson;

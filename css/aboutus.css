@@ -10,7 +10,7 @@ body{
     height: 750px;
     display: flex;
     justify-content: center;
-    background: url(Images/aboutusnew.png);
+    background: url(../Images/aboutusnew.png);
     background-size: cover;
     object-position: center;
     width: 100%;
@@ -165,7 +165,7 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: url(Images/ceobanner.png);
+    background: url(../Images/ceobanner.png);
     background-size: cover;
     background-repeat: no-repeat;
 }

@@ -15,7 +15,7 @@ include 'functions/common_function.php';
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="css/cart.css">
   
 </head>
 
@@ -130,7 +130,6 @@ include 'functions/common_function.php';
                     ?>
 
 
-
                     <td>$<?php echo $price_table?></td>
                     <td>
                     <input type="checkbox" name="remove_item[]" value="<?php echo $productID ?>">
@@ -156,7 +155,7 @@ include 'functions/common_function.php';
         <!--Subtotal-->
     <div>
         <br><h6 class="px-3">Total Price: $ <?php echo $total_price?></h6>
-        <a href="products.php"><button class="button-action" href="products.php">Continue exploring</button></a>
+        <button class="button-action"><a href="products.php" style="text-decoration: none; color: #ffffff;">Continue exploring</button></a>
         <button class="button-action"><a href="checkout.php" style="text-decoration: none; color: #ffffff;">Checkout</button>
     </div>
   </div>

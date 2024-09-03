@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="backend.css">
+  <link rel="stylesheet" href="css/backend1.css">
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> 
 </head>
@@ -63,19 +63,19 @@ if(isset($_POST['submit'])){
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="Home.html">Home</a>
+                <a class="nav-link mx-lg-2" href="home.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="collection.html">Collections</a>
+                <a class="nav-link mx-lg-2" href="collection.php">Collections</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="products.html">Products</a>
+                <a class="nav-link mx-lg-2" href="products.php">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="contactus.html">Contact Us</a>
+                <a class="nav-link mx-lg-2" href="contactus.php">Contact Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="aboutus.html">About Us</a>
+                <a class="nav-link mx-lg-2" href="aboutus.php">About Us</a>
               </li>
             </ul>
           </div>

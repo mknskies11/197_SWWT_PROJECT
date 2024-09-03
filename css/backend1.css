@@ -103,7 +103,7 @@
     justify-content: center;
     padding: 20px;
     padding-bottom: 20px;
-    background-image: url(Images/background.png);
+    background-image: url(../Images/background.png);
 }
 
 .form-container form {

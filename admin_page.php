@@ -17,7 +17,7 @@ if(!isset($_SESSION['admin_name'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
-    <link rel="stylesheet" href="backend.css">
+    <link rel="stylesheet" href="css/backend.css">
 </head>
 <body>
 <div class="admin-container">
