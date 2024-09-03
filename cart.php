@@ -88,7 +88,7 @@ remove_cart_items();
             }
             ?>
 
-            <a href="user_area/profile.php" class="text-dark me-3"><i class='bx bx-user bx-sm'></i></a>
+            <a href="user_area/profile2.php" class="text-dark me-3"><i class='bx bx-user bx-sm'></i></a>
             <a href="#" class="text-dark me-3" style="text-decoration: none;"><i class="bx bx-cart bx-sm"></i> <?php cart_item(); ?></a>
         </div>
 
