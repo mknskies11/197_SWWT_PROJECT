@@ -1,6 +1,7 @@
 <?php
 include '../config.php'; // Include your database connection
 include '../functions/common_function.php';
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +45,7 @@ include '../functions/common_function.php';
               <a class="nav-link mx-lg-2" href="../contactus.php">Contact Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active mx-lg-2" href="../aboutus.php">About Us</a>
+              <a class="nav-link mx-lg-2" href="../aboutus.php">About Us</a>
             </li>
           </ul>
         </div>
@@ -70,10 +71,10 @@ include '../functions/common_function.php';
 
           <?php
             if (!isset($_SESSION['user_name'])){
-                echo "<a href='user_area/user_login.php' class='login-button'>Login</a>";
+                echo "<a href='user_login.php' class='login-button'>Login</a>";
             }
             else{
-                echo "<a href='user_area/logout.php' class='login-button'>Logout</a>";
+                echo "<a href='logout.php' class='login-button'>Logout</a>";
             }
             
             ?>
@@ -85,37 +86,40 @@ include '../functions/common_function.php';
   </nav>
   <!--Bootstrap Navbar ends here-->
 </header>
+
+
 <!-- Link to Google Fonts for Poppins -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-<!-- Checkout Form -->
+<!-- Checkout Form Container -->
 <div class="container my-5" style="font-family: 'Poppins', sans-serif;">
   <div class="row justify-content-center">
+    <!-- Payment Options Form -->
     <div class="col-md-6">
       <form action="" method="post" class="p-4 border rounded shadow-sm bg-white">
         <h3 class="mb-4 text-center">Payment Options</h3>
 
         <!-- Full Name Input -->
         <div class="mb-3">
-          <label for="full_name" class="form-label">Full Name</label>
+          <label for="full_name" class="form-label">Full Name:</label>
           <input type="text" id="full_name" name="full_name" class="form-control" placeholder="Enter your full name" required>
         </div>
 
         <!-- Delivery Address Input -->
         <div class="mb-3">
-          <label for="delivery_address" class="form-label">Delivery Address</label>
+          <label for="delivery_address" class="form-label">Delivery Address:</label>
           <textarea id="delivery_address" name="delivery_address" class="form-control" rows="3" placeholder="Enter your delivery address" required></textarea>
         </div>
 
         <!-- Contact Number Input -->
         <div class="mb-3">
-          <label for="contact_number" class="form-label">Contact Number</label>
+          <label for="contact_number" class="form-label">Contact Number:</label>
           <input type="tel" id="contact_number" name="contact_number" class="form-control" placeholder="Enter your contact number" required>
         </div>
 
         <!-- Payment Method Selection -->
         <div class="mb-3">
-          <label for="payment_type" class="form-label">Select Payment Method</label>
+          <label for="payment_type" class="form-label">Select Payment Method: </label>
           <select name="payment_type" id="payment_type" class="form-select" required>
             <option value="">--Select Payment Method--</option>
             <option value="credit_card">Credit Card</option>
@@ -136,9 +140,31 @@ include '../functions/common_function.php';
         </p>
       </form>
     </div>
+
+
+    <?php
+    $user_ip = getIPAddress();
+    $get_user = "SELECT * FROM `user_table` WHERE user_ip='$user_ip'";
+    $result = mysqli_query($conn, $get_user);
+    $run_query = mysqli_fetch_array($result);
+    $user_id = $run_query['user_id'];
+    
+    
+    
+    ?>
+    <!-- Pay Offline Form -->
+    <div class="col-md-4">
+      <form action="" method="post" class="p-4 border rounded shadow-sm bg-white">
+        <h3 class="mb-4 text-center">Pay Offline</h3>
+
+        <!-- Proceed to Pay Button -->
+        <div class="d-grid">
+          <button type="button" class="btn btn-primary" style="background-color: black; border: none; "><a href="order.php?user_id=<?php echo $user_id; ?>">Proceed to Pay</a></button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
