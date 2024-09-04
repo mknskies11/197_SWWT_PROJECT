@@ -20,6 +20,40 @@ session_start();
   <link rel="stylesheet" href="home.css">
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> 
+  <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: #000;
+        }
+
+        .form-control,
+        .form-control:focus {
+            background-color: #f8f9fa;
+            border-color: #ddd;
+            color: #000;
+        }
+
+        .btn {
+            background-color: #000;
+            border-color: #444;
+            color: #fff;
+        }
+
+        .btn:hover {
+            background-color: #333;
+            border-color: #555;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
 <body>
@@ -92,20 +126,34 @@ session_start();
   <!--Bootstrap Navbar ends here-->
   </header>
 
-  <!--Registration form starts here-->
-  <div class="form-container">
-    <form action="sendmail.php" method="post">
-      <h3>contact us</h3>
 
-      <input type="text" name="cname" required placeholder="Enter your name">
-      <input type="text" name="cemail" required placeholder="Enter your email">
-      <input type="text" name="subject" required placeholder="Enter a subject">
-      <input type="textarea" name="message" required placeholder="Write your message here...">
-      <input type="submit" name = "submit" value="Send" class="form-btn">
-    </form>
-  </div>
+<!-- Contact Us Form -->
+<div class="container">
+    <div class="form-container">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <form action="send_mail.php" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name" required name="contactname">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" name="contactemail" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+                <label for="subject" class="form-label">Subject:</label>
+                <input type="text" class="form-control" name="contactsubject" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Write your message here:</label>
+                <textarea class="form-control" name="contactmessage" id="message" rows="4" placeholder="Your Message"
+                    required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" name="submitContact">Send</button>
+        </form>
+    </div>
+</div>
 
-    
 
 
 
@@ -157,9 +205,27 @@ session_start();
     </div>
   </footer>
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+    <script src="sweetalert2.all.min.js"></script>
+
+    <script>
+
+      var messageText = "<?= $_SESSION['status'] ?? ''; ?>";
+
+      if(messageText != ''){
+      Swal.fire({
+      title: "Thank you",
+      text: messageText,
+      icon: "success"
+      });
+      <?php unset($_SESSION['status']) ?>
+    }
+    </script>
 </body>
 
 </html>

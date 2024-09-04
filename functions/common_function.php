@@ -128,9 +128,35 @@ function total_cart_price()
 //get user order details
 function get_user_order_details()
 {
-  global $conn;
-  $username = $_SESSION['user_name'];
+    global $conn;
+    $username = $_SESSION['user_name'];
+    $get_details = "SELECT * FROM `user_table` WHERE user_name='$username'";
+    $result_query = mysqli_query($conn, $get_details);
 
+    if (!$result_query) {
+        echo "Error in query: " . mysqli_error($conn);
+        return;
+    }
+
+    while($row_query = mysqli_fetch_array($result_query)){
+        $user_id = $row_query["user_id"];
+
+        if(!isset($_GET['edit_account'])){
+            if(!isset($_GET['delete_account'])){
+                $get_orders = "SELECT * FROM `user_orders` WHERE user_id = $user_id AND order_status = 'pending' ";
+                $result_orders_query = mysqli_query($conn, $get_orders);
+                $row_count = mysqli_num_rows($result_orders_query);
+
+                if($row_count > 0){
+                    echo "<p class='text-center'>You have <span class='text-danger'>$row_count</span> pending orders</p>";
+                } else {
+                    echo "<p class='text-center'>No pending orders found.</p>";
+
+                }
+            }
+        }
+    }
 }
+
 
 ?>

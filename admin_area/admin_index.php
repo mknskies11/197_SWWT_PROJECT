@@ -37,23 +37,13 @@ include('../config.php');
             <li class="nav-item">
               <a class="nav-link mx-lg-2" aria-current="page" href="add_products.php">Add Products</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link mx-lg-2" href="collection.php">View Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link mx-lg-2" href="products.php">All Orders</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link mx-lg-2" href="contactus.php">All Payments</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link mx-lg-2" href="aboutus.php">Users</a>
+
             </li>
           </ul>
         </div>
       </div>
 
-      <a href="../logout.php" class="login-button">Logout</a>
+      <a href="../user_area/logout.php" class="login-button">Logout</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -63,55 +53,6 @@ include('../config.php');
 </header>
   <!--Bootstrap Navbar ends here-->
 
-  
-  
-  <!--Footer-->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="footer-col">
-          <h5>MonoFam</h5>
-          <ul>
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="collection.html">Collections</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="contactus.html">Contact Us</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Events</h5>
-          <ul>
-            <li><a href="https://edition.cnn.com/style/nyfw-spring-summer-2024-highlights/index.html" target="_blank">Fashion Week</a></li>
-            <li><a href="https://www.vogue.com/slideshow/met-gala-2023-red-carpet-live-celebrity-fashion" target="_blank">Met Gala</a></li>
-            <li><a href="#">Campaign Events</a></li>
-            <li><a href="#">Pop-Up Stores</a></li>
-            <li><a href="#">Virtual Events</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>More</h5>
-          <ul>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Archive</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Follow Us</h5>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-discord"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
